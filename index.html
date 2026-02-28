@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,12 @@
   <meta property="og:type" content="website">
 
   <!-- Favicon: purple dot -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <main>
 
@@ -27,54 +30,83 @@
       </div>
     </section>
 
-    <!-- ===== UPCOMING APPS ===== -->
-    <section class="upcoming" aria-labelledby="upcoming-heading">
+    <!-- ===== APPS ===== -->
+    <section class="apps" aria-labelledby="apps-heading">
       <div class="container">
-        <h2 id="upcoming-heading" class="section-heading">Upcoming</h2>
+        <h2 id="apps-heading" class="section-heading">Apps</h2>
 
         <div class="cards-grid" role="list">
 
           <!-- 365 Vibe Days -->
-          <article class="card" role="listitem">
+          <a href="https://apps.apple.com/pl/app/365-vibe-days-dots-widget/id6758278662" target="_blank" class="card"
+            role="listitem" aria-label="365 Vibe Days on App Store">
             <div class="card__icon" aria-hidden="true">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="9" cy="9" r="3" fill="currentColor" opacity="0.3"/>
-                <circle cx="19" cy="9" r="3" fill="currentColor" opacity="0.5"/>
-                <circle cx="29" cy="9" r="3" fill="currentColor" opacity="0.7"/>
-                <circle cx="39" cy="9" r="3" fill="currentColor" opacity="1"/>
-                <circle cx="9" cy="19" r="3" fill="currentColor" opacity="0.4"/>
-                <circle cx="19" cy="19" r="3" fill="currentColor" opacity="0.6"/>
-                <circle cx="29" cy="19" r="3" fill="currentColor" opacity="0.8"/>
-                <circle cx="39" cy="19" r="3" fill="currentColor" opacity="1"/>
-                <circle cx="9" cy="29" r="3" fill="currentColor" opacity="0.5"/>
-                <circle cx="19" cy="29" r="3" fill="currentColor" opacity="0.7"/>
-                <circle cx="29" cy="29" r="3" fill="currentColor" opacity="0.9"/>
-                <circle cx="39" cy="29" r="3" fill="currentColor" opacity="0.3"/>
-                <circle cx="9" cy="39" r="3" fill="currentColor" opacity="0.6"/>
-                <circle cx="19" cy="39" r="3" fill="currentColor" opacity="0.2"/>
-                <circle cx="29" cy="39" r="3" fill="currentColor" opacity="0.4"/>
-                <circle cx="39" cy="39" r="3" fill="currentColor" opacity="0.5"/>
+                <circle cx="9" cy="9" r="3" fill="currentColor" opacity="0.3" />
+                <circle cx="19" cy="9" r="3" fill="currentColor" opacity="0.5" />
+                <circle cx="29" cy="9" r="3" fill="currentColor" opacity="0.7" />
+                <circle cx="39" cy="9" r="3" fill="currentColor" opacity="1" />
+                <circle cx="9" cy="19" r="3" fill="currentColor" opacity="0.4" />
+                <circle cx="19" cy="19" r="3" fill="currentColor" opacity="0.6" />
+                <circle cx="29" cy="19" r="3" fill="currentColor" opacity="0.8" />
+                <circle cx="39" cy="19" r="3" fill="currentColor" opacity="1" />
+                <circle cx="9" cy="29" r="3" fill="currentColor" opacity="0.5" />
+                <circle cx="19" cy="29" r="3" fill="currentColor" opacity="0.7" />
+                <circle cx="29" cy="29" r="3" fill="currentColor" opacity="0.9" />
+                <circle cx="39" cy="29" r="3" fill="currentColor" opacity="0.3" />
+                <circle cx="9" cy="39" r="3" fill="currentColor" opacity="0.6" />
+                <circle cx="19" cy="39" r="3" fill="currentColor" opacity="0.2" />
+                <circle cx="29" cy="39" r="3" fill="currentColor" opacity="0.4" />
+                <circle cx="39" cy="39" r="3" fill="currentColor" opacity="0.5" />
               </svg>
             </div>
             <h3 class="card__name">365 Vibe Days</h3>
+            <span class="card__badge">Released</span>
             <p class="card__desc">Visualize time with dot grids.</p>
+            <div class="card__action">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path
+                  d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
+              </svg>
+              View on App Store
+            </div>
+          </a>
+
+          <!-- Vibe Eyes -->
+          <article class="card" role="listitem">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" opacity="0.4" />
+                <path d="M18 8 L18 12 C18 14.2091 19.7909 16 22 16 L26 16 C28.2091 16 30 14.2091 30 12 L30 8"
+                  fill="currentColor" />
+                <circle cx="18" cy="26" r="4" stroke="currentColor" stroke-width="2" />
+                <circle cx="18" cy="26" r="1.5" fill="currentColor" />
+                <circle cx="30" cy="26" r="4" stroke="currentColor" stroke-width="2" />
+                <circle cx="30" cy="26" r="1.5" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="card__name">Vibe Eyes</h3>
+            <span class="card__badge">Upcoming</span>
+            <p class="card__desc">Playful notch eyes that follow your cursor.</p>
           </article>
 
           <!-- VibeFlip -->
           <article class="card" role="listitem">
             <div class="card__icon" aria-hidden="true">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="10" width="26" height="32" rx="4" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                <rect x="16" y="6" width="26" height="32" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="2"/>
+                <rect x="6" y="10" width="26" height="32" rx="4" stroke="currentColor" stroke-width="2" opacity="0.4" />
+                <rect x="16" y="6" width="26" height="32" rx="4" fill="currentColor" opacity="0.15"
+                  stroke="currentColor" stroke-width="2" />
               </svg>
             </div>
             <h3 class="card__name">VibeFlip</h3>
+            <span class="card__badge">Upcoming</span>
             <p class="card__desc">Daily quotes &amp; reflection.</p>
           </article>
 
         </div>
 
-        <p class="upcoming__more">More Vibe apps soon.</p>
+        <p class="apps__more">More Vibe apps soon.</p>
       </div>
     </section>
 
@@ -88,4 +120,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
 </html>

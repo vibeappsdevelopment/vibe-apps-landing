@@ -50,7 +50,9 @@ body {
 /* ========================================
    3. TYPOGRAPHY
    ======================================== */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.2;
 }
 
@@ -96,15 +98,13 @@ a:hover {
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
-  background: linear-gradient(
-    120deg,
-    var(--color-text-primary) 0%,
-    var(--color-text-primary) 30%,
-    var(--color-accent) 50%,
-    var(--color-accent-light) 55%,
-    var(--color-text-primary) 70%,
-    var(--color-text-primary) 100%
-  );
+  background: linear-gradient(120deg,
+      var(--color-text-primary) 0%,
+      var(--color-text-primary) 30%,
+      var(--color-accent) 50%,
+      var(--color-accent-light) 55%,
+      var(--color-text-primary) 70%,
+      var(--color-text-primary) 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -119,14 +119,21 @@ a:hover {
 }
 
 @keyframes shimmer {
-  0%, 100% { background-position: 200% center; }
-  50% { background-position: -200% center; }
+
+  0%,
+  100% {
+    background-position: 200% center;
+  }
+
+  50% {
+    background-position: -200% center;
+  }
 }
 
 /* ========================================
    6. APP CARDS
    ======================================== */
-.upcoming {
+.apps {
   padding: clamp(2rem, 6vh, 4rem) 0;
 }
 
@@ -152,21 +159,17 @@ a:hover {
   text-align: center;
   box-shadow: 0 1px 3px var(--color-shadow),
     0 4px 12px var(--color-shadow);
-  transition: transform var(--transition-base),
-    box-shadow var(--transition-base),
-    border-color var(--transition-base);
-  will-change: transform;
 }
 
-.card:hover {
-  transform: perspective(800px) rotateX(-2deg) rotateY(2deg) scale(1.02);
-  box-shadow: 0 8px 30px var(--color-shadow-hover),
-    0 0 0 1px var(--color-border-hover);
-  border-color: var(--color-border-hover);
+a.card {
+  display: block;
+  color: var(--color-text-primary);
+  transition: none !important;
 }
 
-.card--coming-soon {
-  opacity: 0.55;
+a.card:hover {
+  opacity: 1;
+  transition: none !important;
 }
 
 .card__icon {
@@ -208,7 +211,30 @@ a:hover {
   margin: 0;
 }
 
-.upcoming__more {
+.card__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+}
+
+
+
+.card__action svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.apps__more {
   text-align: center;
   color: var(--color-text-secondary);
   font-size: 0.9375rem;
@@ -306,6 +332,7 @@ a:hover {
    9. REDUCED MOTION
    ======================================== */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
