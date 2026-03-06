@@ -20,7 +20,7 @@
 
     // PostHog event tracking for card clicks
     card.addEventListener("click", function () {
-      if (typeof posthog !== 'undefined') {
+      if (typeof posthog !== 'undefined' && typeof posthog.capture === 'function') {
         var appName = card.querySelector(".card__name")?.textContent || "Unknown App";
         posthog.capture('clicked_app_card', { app_name: appName });
       }
