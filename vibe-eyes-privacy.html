@@ -18,6 +18,7 @@
             api_host: 'https://eu.i.posthog.com',
             defaults: '2026-01-30',
             person_profiles: 'always', // we will create profiles for anonymous users as well
+            persistence: 'memory', // enforce cookieless tracking globally
         })
     </script>
 
@@ -89,16 +90,23 @@
 
             <!-- Third-Party -->
             <section>
-                <h2>4. Third-Party Services</h2>
+                <h2>4. Third-Party Services & Website Analytics</h2>
                 <p>
                     The Vibe Eyes macOS application does not integrate any third-party SDKs, analytics tracking, or
                     advertising frameworks.
                     The app operates entirely standalone on your device.
                 </p>
                 <p>
-                    Please note that this website uses PostHog to collect anonymous website usage data. This applies
-                    only to the website, not the macOS application itself. You can learn more about PostHog's privacy
-                    practices at <a href="https://posthog.com/privacy" target="_blank">posthog.com/privacy</a>.
+                    Please note that this <strong>website</strong> uses PostHog to collect anonymous usage data.
+                    To protect your privacy and comply with GDPR and CCPA standards, this tracking is strictly
+                    "cookieless."
+                    We do not store tracking cookies on your device or track your activity across other websites.
+                </p>
+                <p>
+                    Because we do not collect or store identifiable personal profiles, there is generally no data for us
+                    to delete
+                    or provide under GDPR/CCPA. You can learn more about PostHog's privacy practices at
+                    <a href="https://posthog.com/privacy" target="_blank">posthog.com/privacy</a>.
                 </p>
             </section>
 
