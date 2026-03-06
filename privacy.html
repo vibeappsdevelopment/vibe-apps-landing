@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,22 @@
   <meta name="description" content="Privacy policy for Vibe Apps.">
 
   <!-- Favicon: purple dot -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
+
+  <!-- PostHog -->
+  <script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "Ci init Vi Ji Dt Gi Ki Bi Wi capture calculateEventProperties ie register register_once register_for_session unregister unregister_for_session ne getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty re Zi createPersonProfile setInternalOrTestUser se zi oe opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Xi debug xt ee getPageViewId captureTraceFeedback captureTraceMetric ji".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_HXF64unA6jxbChFFtKZGUNEdMS1Lhv3lqlNOkadzjz5', {
+      api_host: 'https://eu.i.posthog.com',
+      defaults: '2026-01-30',
+      person_profiles: 'always', // we will create profiles for anonymous users as well
+    })
+  </script>
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <header class="privacy-header">
@@ -22,7 +35,7 @@
   <main class="privacy-content">
     <div class="container container--narrow">
       <h1>Privacy Policy</h1>
-      <p class="privacy-updated">Last updated: February 9, 2026</p>
+      <p class="privacy-updated">Last updated: March 6, 2026</p>
 
       <!-- Overview -->
       <section>
@@ -57,14 +70,12 @@
       <!-- Analytics -->
       <section>
         <h2>Analytics</h2>
-        <p>Our apps do not use analytics services of any kind.</p>
-        <!-- If you add analytics in the future, replace the paragraph above with:
         <p>
-          We use [service name] to collect anonymous usage data to help us improve
-          our apps. This data does not include any personally identifiable information.
-          You can learn more about [service name]'s privacy practices at [link].
+          We use PostHog to collect anonymous usage data to help us improve this website
+          and understand our audience. This data does not include any personally identifiable
+          information. You can learn more about PostHog's privacy practices at <a href="https://posthog.com/privacy"
+            target="_blank">posthog.com/privacy</a>.
         </p>
-        -->
       </section>
 
       <!-- Third-Party Services -->
@@ -138,4 +149,5 @@
   </footer>
 
 </body>
+
 </html>
