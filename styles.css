@@ -381,27 +381,27 @@ a.card:hover {
    ======================================== */
 .consent-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9999;
   background: var(--color-bg-card);
-  border-top: 1px solid var(--color-border);
-  box-shadow: 0 -2px 12px var(--color-shadow);
-  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.5rem;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
+  max-width: 600px;
+  width: calc(100% - 2.5rem);
 }
 
 .consent-banner__text {
-  flex: 1 1 300px;
-  font-size: 0.875rem;
+  flex: 1;
+  font-size: 0.8125rem;
   color: var(--color-text-secondary);
   margin: 0;
-  text-align: center;
 }
 
 .consent-banner__text a {
@@ -443,4 +443,17 @@ a.card:hover {
   border-color: var(--color-accent);
   padding: 0.625rem 2rem;
   font-size: 0.9375rem;
+}
+
+@media (max-width: 480px) {
+  .consent-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .consent-banner__text {
+    font-size: 0.75rem;
+  }
 }
