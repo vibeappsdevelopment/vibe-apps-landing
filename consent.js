@@ -45,7 +45,7 @@
 
     var text = document.createElement('p');
     text.className = 'consent-banner__text';
-    text.textContent = 'We use privacy-friendly analytics (PostHog, EU-hosted) to understand how visitors use this site. No cookies are stored. ';
+    text.textContent = 'We use anonymous analytics to improve this site. No cookies are stored. ';
     var link = document.createElement('a');
     link.href = 'website-privacy.html#analytics';
     link.textContent = 'Learn more';

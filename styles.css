@@ -418,9 +418,9 @@ a.card:hover {
 
 .consent-btn {
   font-family: var(--font-stack);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  padding: 0.5rem 1.25rem;
+  padding: 0.625rem 1.5rem;
   border-radius: 100px;
   cursor: pointer;
   transition: opacity var(--transition-base);
@@ -441,4 +441,6 @@ a.card:hover {
   background: var(--color-accent);
   color: #ffffff;
   border-color: var(--color-accent);
+  padding: 0.625rem 2rem;
+  font-size: 0.9375rem;
 }
