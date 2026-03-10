@@ -159,10 +159,13 @@ a:hover {
   text-align: center;
   box-shadow: 0 1px 3px var(--color-shadow),
     0 4px 12px var(--color-shadow);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 32px 1fr auto;
+  align-items: start;
 }
 
 a.card {
-  display: block;
   color: var(--color-text-primary);
   transition: none !important;
 }
@@ -177,6 +180,7 @@ a.card:hover {
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
+  grid-row: 1;
 }
 
 .card__icon svg {
@@ -189,6 +193,7 @@ a.card:hover {
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 0.375rem;
+  grid-row: 2;
 }
 
 .card__badge {
@@ -201,7 +206,9 @@ a.card:hover {
   border: 1px solid currentColor;
   border-radius: 100px;
   padding: 0.125rem 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  grid-row: 3;
+  justify-self: center;
 }
 
 .card__desc {
@@ -209,6 +216,7 @@ a.card:hover {
   color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 0;
+  grid-row: 4;
 }
 
 .card__action {
@@ -224,6 +232,9 @@ a.card:hover {
   padding: 0.5rem 1.25rem;
   border-radius: 100px;
   border: 1px solid var(--color-border);
+  grid-row: 5;
+  justify-self: center;
+  align-self: end;
 }
 
 
