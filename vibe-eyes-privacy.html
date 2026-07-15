@@ -28,7 +28,7 @@
     <main class="privacy-content">
         <div class="container container--narrow">
             <h1>Privacy Policy for Vibe Eyes</h1>
-            <p class="privacy-updated">Last Updated: March 6, 2026</p>
+            <p class="privacy-updated">Last Updated: July 15, 2026</p>
 
             <!-- Overview -->
             <section>
@@ -37,8 +37,10 @@
                     application ("the App") handles your information.
                 </p>
                 <p>
-                    Our core principle is simple: <strong>Vibe Eyes does not collect, store, or transmit your personal
-                        data.</strong>
+                    Our core principle is simple: <strong>we run no servers and collect no personal data.</strong>
+                    Everything the App does happens on your Mac &mdash; with one exception you control: the optional
+                    avatar-generation feature sends a photo you choose to an AI provider <strong>you select, using your
+                    own API key</strong>.
                 </p>
             </section>
 
@@ -46,46 +48,91 @@
             <section>
                 <h2>1. Data Collection and Usage</h2>
                 <p>
-                    Vibe Eyes is designed to run entirely locally on your Mac. We do not collect any personal
-                    information, analytics, usage data, or crash reports directly. The App does not require an account,
-                    and we do not track your behavior.
+                    Vibe Eyes runs locally on your Mac. <strong>We (Vibe Apps) collect nothing:</strong> there is no
+                    account, no login, no analytics, no advertising, no crash-reporting, and no tracking in the App, and
+                    we operate no backend that could receive your data. The App stores your settings, any avatars you
+                    generate, and your AI provider API key(s) locally on your device only &mdash; API keys are held in the
+                    macOS <strong>Keychain</strong>, the system's encrypted secret store.
                 </p>
             </section>
 
-            <!-- Accessibility -->
+            <!-- Cursor tracking -->
             <section>
-                <h2>2. Accessibility Permissions &amp; Cursor Tracking</h2>
+                <h2>2. Cursor Tracking</h2>
                 <p>
-                    To function correctly, Vibe Eyes requires macOS Accessibility permissions. This permission is used
-                    strictly and exclusively to monitor your cursor's global position on the screen so that the animated
-                    eyes can follow your cursor across multiple monitors.
+                    So the animated eyes can follow your cursor, the App reads the cursor's on-screen position using
+                    standard macOS APIs. This happens entirely on your device.
                 </p>
                 <ul>
-                    <li><strong>No Data Logging:</strong> We do not log, record, or store your cursor movements, clicks,
-                        or any other input.</li>
-                    <li><strong>No Data Transmission:</strong> Cursor coordinates and movement data never leave your
-                        device and are never transmitted to our servers or any third parties.</li>
-                    <li><strong>Real-time Processing:</strong> The cursor tracking data is processed in real-time in the
-                        device&rsquo;s volatile memory solely for the purpose of rendering the app's animations.</li>
+                    <li><strong>No special permissions:</strong> the current version does <strong>not</strong> require
+                        macOS Accessibility access, nor any camera, microphone, location, contacts, or health
+                        permission.</li>
+                    <li><strong>No logging:</strong> we do not log, record, or store your cursor movements or clicks.</li>
+                    <li><strong>No transmission:</strong> cursor data never leaves your device and is never sent to us or
+                        any third party; it is processed in real time in volatile memory purely to render the
+                        animation.</li>
                 </ul>
+            </section>
+
+            <!-- Avatar generation -->
+            <section>
+                <h2>3. Avatar Generation and Third-Party AI Providers</h2>
+                <p>
+                    The optional paid feature <strong>Vibe Eyes Plus</strong> turns a photo into a custom avatar. This is
+                    the only part of the App that sends data off your device, and it does so <strong>at your
+                    direction</strong>:
+                </p>
+                <ul>
+                    <li><strong>You choose the provider</strong> &mdash; Google Gemini, OpenAI, OpenRouter, or any custom
+                        OpenAI-compatible endpoint you enter (including a local server on your own machine).</li>
+                    <li><strong>You supply your own API key</strong> for that provider. It is stored in your Keychain and
+                        sent <strong>only</strong> to the provider you selected &mdash; never to us, and never to any
+                        other party.</li>
+                    <li>When you press <strong>Generate</strong>, the App sends <strong>the photo you provided</strong>
+                        and a small built-in reference image to that provider over an encrypted (HTTPS) connection so it
+                        can create your avatar.</li>
+                    <li>The provider processes the image, returns the result, and <strong>bills you directly</strong>.
+                        What it does with the photo and key is governed by <strong>that provider's own privacy
+                        policy</strong> &mdash;
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>,
+                        <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI</a>,
+                        <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter</a>, or the
+                        operator of any custom host you enter.</li>
+                </ul>
+                <p>
+                    We are not a party to that exchange, receive none of the data, and cannot control the provider's
+                    retention or use of your photo. Choose a provider you trust and review its policy before use. If you
+                    never use the Generate feature, <strong>no image or key ever leaves your Mac.</strong>
+                </p>
+            </section>
+
+            <!-- Purchases -->
+            <section>
+                <h2>4. Purchases</h2>
+                <p>
+                    Vibe Eyes Plus is a one-time in-app purchase processed by <strong>Apple</strong> through the App
+                    Store. Apple handles the transaction and your payment method; <strong>we never receive your payment
+                    information.</strong> Whether you own the purchase is verified on your device against Apple's records
+                    &mdash; we keep no purchase database and run no license server.
+                </p>
             </section>
 
             <!-- Settings -->
             <section>
-                <h2>3. App Settings and Preferences</h2>
+                <h2>5. App Settings and Preferences</h2>
                 <p>
-                    Your user preferences (such as selected characters, themes, and customized colors) are saved locally
-                    on your device using Apple's standard <code>@AppStorage</code> mechanisms. We do not sync or have
-                    access to these settings.
+                    Your preferences (selected character, theme, colors, eye options) are saved locally on your device
+                    using Apple's standard <code>UserDefaults</code>/<code>@AppStorage</code> mechanisms. We do not sync
+                    or have access to these settings.
                 </p>
             </section>
 
             <!-- Third-Party -->
             <section>
-                <h2>4. Third-Party Services & Website Analytics</h2>
+                <h2>6. Third-Party Services &amp; Website Analytics</h2>
                 <p>
-                    The Vibe Eyes macOS application does not integrate any third-party SDKs, analytics tracking, or
-                    advertising frameworks. The app operates entirely standalone on your device.
+                    Beyond the AI provider you choose for generation (Section 3), the Vibe Eyes macOS application
+                    integrates no third-party analytics, advertising, or tracking SDKs.
                 </p>
                 <p>
                     This <strong>website</strong> uses PostHog (EU-hosted) to collect anonymous usage data, only
@@ -99,9 +146,18 @@
                 </p>
             </section>
 
+            <!-- Children -->
+            <section>
+                <h2>7. Children</h2>
+                <p>
+                    Vibe Eyes is a general-audience utility and is not directed to children under 13 (or under 16 in the
+                    EEA). We do not knowingly collect data from anyone.
+                </p>
+            </section>
+
             <!-- Changes -->
             <section>
-                <h2>5. Changes to This Privacy Policy</h2>
+                <h2>8. Changes to This Privacy Policy</h2>
                 <p>
                     We may update this Privacy Policy from time to time. If any significant changes are made, we will
                     update the "Last Updated" date at the top of this policy.
@@ -110,7 +166,7 @@
 
             <!-- Contact -->
             <section id="support">
-                <h2>6. Contact Us</h2>
+                <h2>9. Contact Us</h2>
                 <p>
                     If you have any questions or concerns regarding this Privacy Policy or how Vibe Eyes handles your
                     data, please contact us at:<br>
