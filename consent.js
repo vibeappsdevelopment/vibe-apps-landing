@@ -37,9 +37,8 @@
   function showBanner() {
     if (document.getElementById('consent-banner')) return;
 
-    var banner = document.createElement('div');
+    var banner = document.createElement('aside');
     banner.id = 'consent-banner';
-    banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Analytics consent');
     banner.className = 'consent-banner';
 

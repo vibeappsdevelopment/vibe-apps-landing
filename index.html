@@ -4,154 +4,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vibe Apps</title>
-  <meta name="description" content="Minimal, visual apps by an indie developer.">
+  <title>Vibe Apps &mdash; small iOS apps you actually look at</title>
+  <meta name="description"
+    content="A one-person studio building small, visual apps for iPhone and Mac: dot-grid year widgets, menu-bar eyes, daily quote cards, a Dynamic Island pet, and a real shelf for your PDFs.">
+
+  <meta name="theme-color" content="#f7f4fb">
 
   <!-- OpenGraph -->
   <meta property="og:title" content="Vibe Apps">
-  <meta property="og:description" content="Minimal apps. Visual mindset.">
+  <meta property="og:description" content="Small iOS apps you actually look at.">
   <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
 
   <!-- Favicon: purple dot -->
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
 
+  <script>document.documentElement.classList.add('js');</script>
+
   <!-- Analytics (consent-gated) -->
   <script src="consent.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <main>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <a class="wordmark" href="index.html">
+          <span class="wordmark__dot" aria-hidden="true"></span>
+          Vibe Apps
+        </a>
+        <div class="topbar__meta">
+          <span class="mono" id="stamp" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
 
     <!-- ===== HERO ===== -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <h1 id="hero-heading" class="hero__title">Vibe Apps</h1>
-        <p class="hero__subtitle">Minimal apps. Visual mindset.</p>
+        <div class="hero__grid">
+
+          <div>
+            <p class="eyebrow rise">Indie studio &middot; iPhone &amp; Mac</p>
+            <h1 id="hero-heading" class="hero__title rise" style="--delay:70ms">
+              Small apps you <em>actually look at.</em>
+            </h1>
+            <p class="hero__lede rise" style="--delay:140ms">
+              One developer, building for the glance: the widget on your home screen, the eyes in your
+              menu bar, the card you flip once a day.
+            </p>
+            <div class="hero__stats rise" style="--delay:210ms">
+              <span class="chip"><b>3</b> on the App Store</span>
+              <span class="chip"><b>2</b> in the works</span>
+              <span class="chip">No accounts, no ads</span>
+            </div>
+          </div>
+
+          <!-- The studio's own idea, at page scale: this year, one dot per day. -->
+          <div class="year rise" style="--delay:280ms">
+            <div class="year__grid" id="year-grid" aria-hidden="true"></div>
+            <p class="year__legend">
+              <span id="year-day">This year, one dot per day</span>
+              <span><b id="year-pct"></b></span>
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
 
     <!-- ===== APPS ===== -->
-    <section class="apps" aria-labelledby="apps-heading">
+    <section class="board" aria-labelledby="board-heading">
       <div class="container">
-        <h2 id="apps-heading" class="section-heading">Apps</h2>
-
-        <div class="cards-grid" role="list">
-
-          <!-- 365 Vibe Days -->
-          <a href="https://apps.apple.com/pl/app/365-vibe-days-dots-widget/id6758278662" target="_blank" class="card"
-            role="listitem" aria-label="365 Vibe Days on App Store">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="9" cy="9" r="3" fill="currentColor" opacity="0.3" />
-                <circle cx="19" cy="9" r="3" fill="currentColor" opacity="0.5" />
-                <circle cx="29" cy="9" r="3" fill="currentColor" opacity="0.7" />
-                <circle cx="39" cy="9" r="3" fill="currentColor" opacity="1" />
-                <circle cx="9" cy="19" r="3" fill="currentColor" opacity="0.4" />
-                <circle cx="19" cy="19" r="3" fill="currentColor" opacity="0.6" />
-                <circle cx="29" cy="19" r="3" fill="currentColor" opacity="0.8" />
-                <circle cx="39" cy="19" r="3" fill="currentColor" opacity="1" />
-                <circle cx="9" cy="29" r="3" fill="currentColor" opacity="0.5" />
-                <circle cx="19" cy="29" r="3" fill="currentColor" opacity="0.7" />
-                <circle cx="29" cy="29" r="3" fill="currentColor" opacity="0.9" />
-                <circle cx="39" cy="29" r="3" fill="currentColor" opacity="0.3" />
-                <circle cx="9" cy="39" r="3" fill="currentColor" opacity="0.6" />
-                <circle cx="19" cy="39" r="3" fill="currentColor" opacity="0.2" />
-                <circle cx="29" cy="39" r="3" fill="currentColor" opacity="0.4" />
-                <circle cx="39" cy="39" r="3" fill="currentColor" opacity="0.5" />
-              </svg>
-            </div>
-            <h3 class="card__name">365 Vibe Days</h3>
-            <p class="card__desc">Visualize time with dot grids.</p>
-            <div class="card__action">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                <path
-                  d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
-              </svg>
-              View on App Store
-            </div>
-          </a>
-
-          <!-- Vibe Eyes -->
-          <a href="https://apps.apple.com/app/vibe-eyes/id6758390080" target="_blank" class="card" role="listitem"
-            aria-label="Vibe Eyes on App Store">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" opacity="0.4" />
-                <path d="M18 8 L18 12 C18 14.2091 19.7909 16 22 16 L26 16 C28.2091 16 30 14.2091 30 12 L30 8"
-                  fill="currentColor" />
-                <circle cx="18" cy="26" r="4" stroke="currentColor" stroke-width="2" />
-                <circle cx="18" cy="26" r="1.5" fill="currentColor" />
-                <circle cx="30" cy="26" r="4" stroke="currentColor" stroke-width="2" />
-                <circle cx="30" cy="26" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
-            <h3 class="card__name">Vibe Eyes</h3>
-            <p class="card__desc">Playful notch eyes that follow your cursor.</p>
-            <div class="card__action">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                <path
-                  d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
-              </svg>
-              View on App Store
-            </div>
-          </a>
-
-          <!-- VibeFlip -->
-          <a href="https://apps.apple.com/app/vibeflip/id6756449950" target="_blank" class="card" role="listitem"
-            aria-label="VibeFlip on App Store">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- face -->
-                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" opacity="0.4" />
-                <!-- happy eyes -->
-                <path d="M14 20 Q17.5 16.5 21 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <path d="M27 20 Q30.5 16.5 34 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <!-- signature long nose -->
-                <path d="M21 22 L27 22 L24 31 Z" fill="currentColor" opacity="0.7" />
-                <!-- big open smile -->
-                <path d="M16 31 Q24 39 32 31 Q24 33.5 16 31 Z" fill="currentColor" opacity="0.85" />
-                <!-- freckles -->
-                <circle cx="14.5" cy="27" r="1" fill="currentColor" opacity="0.5" />
-                <circle cx="33.5" cy="27" r="1" fill="currentColor" opacity="0.5" />
-              </svg>
-            </div>
-            <h3 class="card__name">VibeFlip</h3>
-            <p class="card__desc">Flip a daily quote, log your mood.</p>
-            <div class="card__action">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                <path
-                  d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
-              </svg>
-              View on App Store
-            </div>
-          </a>
-
-          <!-- VibeReader -->
-          <div class="card" role="listitem" aria-label="Vibe Reader, coming soon">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- page -->
-                <rect x="9" y="6" width="30" height="36" rx="4" stroke="currentColor" stroke-width="2"
-                  opacity="0.4" />
-                <!-- lines of text -->
-                <path d="M15 20 H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7" />
-                <path d="M15 27 H33" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5" />
-                <path d="M15 34 H29" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.35" />
-                <!-- bookmark: the page you stopped on -->
-                <path d="M27 6 L34 6 L34 19 L30.5 15.8 L27 19 Z" fill="currentColor" opacity="0.75" />
-              </svg>
-            </div>
-            <h3 class="card__name">Vibe Reader</h3>
-            <span class="card__badge">Coming soon</span>
-            <p class="card__desc">Your PDFs on a real shelf.</p>
-          </div>
-
+        <div class="board__head">
+          <h2 id="board-heading" class="board__title rise">The apps</h2>
+          <p class="mono rise" style="--delay:60ms">Hover to try one</p>
         </div>
 
-        <p class="apps__more">More Vibe apps soon.</p>
+        <ul class="grid">
+
+          <!-- 365 Vibe Days -->
+          <li class="rise">
+            <article class="card card--link">
+              <div class="stage" aria-hidden="true">
+                <div class="dots" id="month-dots"></div>
+              </div>
+              <h3 class="card__name"><a class="card__link" href="https://apps.apple.com/pl/app/365-vibe-days-dots-widget/id6758278662" target="_blank" rel="noopener" data-app="365 Vibe Days">365 Vibe Days<span class="sr-only"> — open on the App Store</span></a></h3>
+              <p class="card__desc">The year as a dot grid, on your home screen. One dot fills every day.</p>
+              <div class="card__foot">
+                <span class="cta" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
+                  </svg>
+                  App Store
+                </span>
+              </div>
+            </article>
+          </li>
+
+          <!-- Vibe Eyes -->
+          <li class="rise" style="--delay:80ms">
+            <article class="card card--link">
+              <div class="stage" aria-hidden="true">
+                <div class="eyes" id="eyes">
+                  <span class="eye"><span class="eye__pupil"></span><span class="eye__lid"></span></span>
+                  <span class="eye"><span class="eye__pupil"></span><span class="eye__lid"></span></span>
+                </div>
+              </div>
+              <h3 class="card__name"><a class="card__link" href="https://apps.apple.com/app/vibe-eyes/id6758390080" target="_blank" rel="noopener" data-app="Vibe Eyes">Vibe Eyes<span class="sr-only"> — open on the Mac App Store</span></a></h3>
+              <p class="card__desc">A face in your Mac menu bar. Its eyes track your cursor and blink when you step away.</p>
+              <div class="card__foot">
+                <span class="cta" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
+                  </svg>
+                  Mac App Store
+                </span>
+              </div>
+            </article>
+          </li>
+
+          <!-- Vibe Flip -->
+          <li class="rise" style="--delay:160ms">
+            <article class="card card--link">
+              <div class="stage" aria-hidden="true">
+                <div class="flip" id="flip">
+                  <div class="flip__face">
+                    <span class="flip__mark">&ldquo;</span>
+                    <span class="flip__mood"><i></i><i></i><i></i><i></i><i></i></span>
+                  </div>
+                  <div class="flip__face flip__face--back"><p id="flip-quote">Start small. Today counts.</p></div>
+                </div>
+              </div>
+              <h3 class="card__name"><a class="card__link" href="https://apps.apple.com/app/vibeflip/id6756449950" target="_blank" rel="noopener" data-app="VibeFlip">Vibe Flip<span class="sr-only"> — open on the App Store</span></a></h3>
+              <p class="card__desc">Flip one card a day, log how it went. Nothing else to do.</p>
+              <div class="card__foot">
+                <span class="cta" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
+                  </svg>
+                  App Store
+                </span>
+              </div>
+            </article>
+          </li>
+
+          <!-- Vibe Pet -->
+          <li class="rise" style="--delay:240ms">
+            <article class="card">
+              <div class="stage" aria-hidden="true">
+                <div class="island">
+                  <span class="island__pet">
+                    <svg viewBox="0 0 32 32" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 13V4l7.5 5.2Z" fill="#ffffff" />
+                      <path d="M26 13V4l-7.5 5.2Z" fill="#ffffff" />
+                      <rect x="4" y="9" width="24" height="19" rx="9.5" fill="#ffffff" />
+                      <circle cx="12" cy="17" r="2.1" fill="#171226" />
+                      <circle cx="20" cy="17" r="2.1" fill="#171226" />
+                      <path d="M14.6 21.3h2.8L16 23.6Z" fill="#171226" />
+                    </svg>
+                  </span>
+                  <span class="island__meters">
+                    <b style="--v:0.72"></b>
+                    <b style="--v:0.44"></b>
+                  </span>
+                </div>
+              </div>
+              <h3 class="card__name">Vibe Pet</h3>
+              <p class="card__desc">A pet that lives in the Dynamic Island and gets hungry while you work.</p>
+              <div class="card__foot">
+                <span class="badge">Coming soon</span>
+              </div>
+            </article>
+          </li>
+
+          <!-- Vibe Reader -->
+          <li class="rise" style="--delay:320ms">
+            <article class="card">
+              <div class="stage" aria-hidden="true">
+                <div class="shelf">
+                  <span style="--i:0; height:64px; width:15px"></span>
+                  <span style="--i:1; height:82px; width:11px"></span>
+                  <span style="--i:2; height:52px; width:18px; opacity:.5"></span>
+                  <span style="--i:3; height:90px; width:13px"></span>
+                  <span style="--i:4; height:70px; width:16px; opacity:.8"></span>
+                  <span style="--i:5; height:78px; width:10px; opacity:.45"></span>
+                </div>
+              </div>
+              <h3 class="card__name">Vibe Reader</h3>
+              <p class="card__desc">Your PDFs on a shelf you can see, instead of a list you scroll.</p>
+              <div class="card__foot">
+                <span class="badge">Coming soon</span>
+              </div>
+            </article>
+          </li>
+
+        </ul>
       </div>
     </section>
 
@@ -159,8 +221,13 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Vibe Apps &middot; <a href="website-privacy.html">Privacy Policy</a> &middot; <a href="#"
-          onclick="vibeResetConsent(); return false;">Cookie Settings</a></p>
+      <div class="footer__inner">
+        <p>&copy; 2026 Vibe Apps</p>
+        <nav aria-label="Legal">
+          <a href="website-privacy.html">Privacy</a>
+          <button class="linkbtn" id="cookie-settings" type="button">Cookie settings</button>
+        </nav>
+      </div>
     </div>
   </footer>
 
