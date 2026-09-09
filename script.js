@@ -146,6 +146,29 @@
   })();
 
   /* ------------------------------------------------------------------
+     App page: the preview plays itself once it is on screen
+     ------------------------------------------------------------------ */
+  (function preview() {
+    var video = document.getElementById('app-preview');
+    if (!video) return;
+
+    // Controls are in the markup, so a blocked autoplay still leaves a usable video.
+    if (reduceMotion.matches || !('IntersectionObserver' in window)) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          video.play().catch(function () { /* the browser said no; the poster stays */ });
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    io.observe(video);
+  })();
+
+  /* ------------------------------------------------------------------
      Entrance: one orchestrated reveal, once
      ------------------------------------------------------------------ */
   (function reveal() {
@@ -179,13 +202,18 @@
       });
     }
 
-    // data-app keeps its original spelling so the PostHog series stays continuous
-    document.querySelectorAll('.card__link').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (typeof posthog === 'undefined' || typeof posthog.capture !== 'function') return;
-        posthog.capture('clicked_app_card', { app_name: link.dataset.app || 'Unknown App' });
+    function track(selector, event) {
+      // data-app keeps its original spelling so the PostHog series stays continuous
+      document.querySelectorAll(selector).forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof posthog === 'undefined' || typeof posthog.capture !== 'function') return;
+          posthog.capture(event, { app_name: link.dataset.app || 'Unknown App' });
+        });
       });
-    });
+    }
+
+    track('.card__link', 'clicked_app_card');
+    track('.track-store', 'clicked_app_store');
   })();
 
 })();

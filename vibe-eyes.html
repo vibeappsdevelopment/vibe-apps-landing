@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Eyes &mdash; a menu bar pet for your Mac</title>
+  <meta name="description"
+    content="Vibe Eyes puts a small, expressive pet in your Mac's menu bar. Its eyes follow your cursor, it blinks, and it winks when you click. Eleven characters included, or make your own from a photo. Free on the Mac App Store.">
+
+  <meta name="theme-color" content="#f7f4fb">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Vibe Eyes — a menu bar pet for your Mac">
+  <meta property="og:description" content="Its eyes follow your cursor, it blinks, and it winks when you click.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vibeappsdevelopment.github.io/vibe-apps-landing/vibe-eyes.html">
+  <meta property="og:image" content="https://vibeappsdevelopment.github.io/vibe-apps-landing/assets/vibe-eyes/01-menubar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: purple dot -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Analytics (consent-gated) -->
+  <script src="consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <a class="wordmark" href="index.html">
+          <span class="wordmark__dot" aria-hidden="true"></span>
+          Vibe Apps
+        </a>
+        <div class="topbar__meta">
+          <a class="mono" href="index.html">&larr; All apps</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="app-hero" aria-labelledby="app-heading">
+      <div class="container">
+        <div class="app-hero__grid">
+
+          <div>
+            <div class="app-id rise">
+              <img class="app-id__icon" src="assets/vibe-eyes/icon.png" width="88" height="88" alt="The Vibe Eyes app icon: a green blob with two wide eyes.">
+              <div>
+                <p class="eyebrow" style="margin-bottom:.25rem">macOS &middot; Menu bar</p>
+                <p class="app-id__meta">Version 3.0 &middot; Free</p>
+              </div>
+            </div>
+
+            <h1 id="app-heading" class="app-hero__title rise" style="--delay:70ms">
+              A pet that lives in your <em>menu bar.</em>
+            </h1>
+            <p class="app-hero__sub rise" style="--delay:140ms">
+              Vibe Eyes tucks a small, expressive character into the top-right of your Mac. Its eyes
+              follow your cursor, it blinks on its own, and it glances up when you come back.
+            </p>
+
+            <div class="actions rise" style="--delay:210ms">
+              <a class="btn track-store" href="https://apps.apple.com/us/app/vibe-eyes-menu-bar-pet/id6758390080?mt=12"
+                target="_blank" rel="noopener" data-app="Vibe Eyes">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
+                </svg>
+                Get it on the Mac App Store
+              </a>
+              <a class="btn btn--ghost" href="#preview">Watch it work</a>
+            </div>
+
+            <div class="specs rise" style="--delay:280ms">
+              <span class="chip"><b>Free</b> &middot; no ads</span>
+              <span class="chip">macOS <b>14+</b></span>
+              <span class="chip"><b>23 MB</b></span>
+              <span class="chip">No account, no analytics</span>
+            </div>
+          </div>
+
+          <!-- The app's whole job, running on this page. -->
+          <div class="demo rise" style="--delay:350ms">
+            <div class="eyes" id="eyes" aria-hidden="true">
+              <span class="eye"><span class="eye__pupil"></span><span class="eye__lid"></span></span>
+              <span class="eye"><span class="eye__pupil"></span><span class="eye__lid"></span></span>
+            </div>
+            <p class="demo__note">Live &mdash; move your cursor. This is what it does all day.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PREVIEW VIDEO ===== -->
+    <section class="sect" id="preview" aria-labelledby="preview-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="preview-heading" class="sect__title">Sixteen seconds of it</h2>
+          <p class="sect__lede">
+            Flipping through the cast, putting one on the menu bar, and the two things a screenshot
+            can't show: the eyes tracking the cursor, and a blink.
+          </p>
+        </div>
+
+        <div class="frame rise" style="--delay:80ms">
+          <video id="app-preview" width="1600" height="900" poster="assets/vibe-eyes/preview-poster.jpg" controls muted
+            loop playsinline preload="none">
+            <source src="assets/vibe-eyes/preview.mp4" type="video/mp4">
+            <p>Your browser can't play this video.
+              <a href="https://apps.apple.com/us/app/vibe-eyes-menu-bar-pet/id6758390080?mt=12">See the preview on the
+                Mac App Store</a>.
+            </p>
+          </video>
+        </div>
+        <p class="caption rise">Recorded on a Mac, no sound.</p>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="sect" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="features-heading" class="sect__title">What it does</h2>
+        </div>
+
+        <ul class="features">
+
+          <li class="rise">
+            <article class="feature">
+              <span class="feature__num">01</span>
+              <h3 class="feature__name">Follows your every move</h3>
+              <p>
+                The eyes track your cursor smoothly across the whole screen, with natural blinking and
+                idle behaviours, so it never feels robotic or repetitive. Click anywhere and it winks back.
+              </p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:60ms">
+            <article class="feature">
+              <span class="feature__num">02</span>
+              <h3 class="feature__name">Eleven characters, all included</h3>
+              <p>Pick one and it moves into your menu bar. Nothing is locked behind a paywall.</p>
+              <ul class="cast">
+                <li>Coco</li>
+                <li>Bella</li>
+                <li>Pepper</li>
+                <li>Rocky</li>
+                <li>Milo</li>
+                <li>Brie</li>
+                <li>Gucci</li>
+                <li>Aussie Pup</li>
+                <li>Ginger Tabby</li>
+                <li>French Bulldog</li>
+                <li>Green Blob</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:120ms">
+            <article class="feature">
+              <span class="feature__num">03</span>
+              <h3 class="feature__name">Make it yours</h3>
+              <ul>
+                <li>Browse the whole cast in a carousel, one click to put any of them up top</li>
+                <li>Adjust pupil size; turn blinking and wink-on-click on or off</li>
+                <li>Fourteen accent colours, or mix your own</li>
+                <li>Nudge a character's eyes exactly where you want them</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:180ms">
+            <article class="feature">
+              <span class="feature__num">04</span>
+              <h3 class="feature__name">Eye Breaks</h3>
+              <p>
+                Gentle reminders to look away, on a schedule you choose. Your character leads a
+                one-minute exercise: follow it across the screen, gaze into the distance for twenty
+                seconds, then blink along. They never interrupt a movie or a presentation, and any you
+                miss while away from your Mac are simply skipped. Off by default.
+              </p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:240ms">
+            <article class="feature">
+              <span class="feature__num">05</span>
+              <h3 class="feature__name">Light on the battery</h3>
+              <p>
+                A native SwiftUI app built to sip battery, not drain it &mdash; it slows its own refresh
+                rate the moment your cursor stops moving. It needs no special permissions at all.
+              </p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:300ms">
+            <article class="feature">
+              <span class="feature__num">06</span>
+              <h3 class="feature__name">Nothing leaves your Mac</h3>
+              <p>
+                There is no account and no analytics, and your cursor position never leaves your machine.
+                The only thing ever sent anywhere is a photo you choose to generate from, and it goes
+                straight to the provider you connected.
+                <a href="vibe-eyes-privacy.html">Read the privacy policy</a>.
+              </p>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SCREENSHOTS ===== -->
+    <section class="sect" aria-labelledby="shots-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="shots-heading" class="sect__title">On a real desktop</h2>
+          <p class="sect__lede">Every shot below is the app running, menu bar and all &mdash; no mockups.</p>
+        </div>
+
+        <ul class="shots">
+          <li class="rise">
+            <figure class="shot">
+              <img src="assets/vibe-eyes/01-menubar.jpg" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="The Vibe Eyes window with Coco the poodle selected, and Coco's face sitting in the macOS menu bar at the top of the screen.">
+              <figcaption>Pick a character. It appears in the menu bar the moment you do.</figcaption>
+            </figure>
+          </li>
+          <li class="rise" style="--delay:60ms">
+            <figure class="shot">
+              <img src="assets/vibe-eyes/04-cast.jpg" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="The character carousel showing Rocky the bull terrier full size, with the rest of the cast in a row beneath.">
+              <figcaption>Eleven of them, flipped through in a carousel. Free, all of them.</figcaption>
+            </figure>
+          </li>
+          <li class="rise" style="--delay:120ms">
+            <figure class="shot">
+              <img src="assets/vibe-eyes/02-photo.jpg" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="A photo of a brown dog beside the avatar generated from it, with wide tracking eyes.">
+              <figcaption>With Plus: one photo becomes an avatar with the same eyes and blinks.</figcaption>
+            </figure>
+          </li>
+          <li class="rise" style="--delay:180ms">
+            <figure class="shot">
+              <img src="assets/vibe-eyes/03-studio.jpg" width="1600" height="1000" loading="lazy" decoding="async"
+                alt="The Studio workspace: a drop zone for a photo on the left, the library of generated avatars on the right.">
+              <figcaption>Studio: the photo you're working on at left, your whole library at right.</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PLUS ===== -->
+    <section class="sect" aria-labelledby="plus-heading">
+      <div class="container">
+        <div class="plus rise">
+          <span class="plus__tag">Vibe Eyes Plus</span>
+          <h2 id="plus-heading">Generate your own, from a photo</h2>
+          <p>
+            Plus is a one-time purchase that unlocks Studio: drop in a photo and the app turns it into a
+            menu-bar character of your own, with the same tracking eyes and blinks as the built-in ones.
+          </p>
+          <p>
+            Generation runs on your own image-provider account &mdash; connect a key for Google Gemini,
+            OpenRouter, or any OpenAI-compatible host, and that provider bills you directly for what you
+            make. Everything else in Vibe Eyes stays free.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT'S NEW ===== -->
+    <section class="sect" aria-labelledby="new-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="new-heading" class="sect__title">New in 3.0</h2>
+        </div>
+        <ul class="notes rise" style="--delay:60ms">
+          <li><strong>A completely new look.</strong> The settings window has been rebuilt from scratch &mdash; light,
+            airy and glass-like, with a drifting colour backdrop.</li>
+          <li><strong>A carousel for the cast.</strong> Flip through every character, see one full size, and press
+            <em>Make it mine</em> when you've found the one.</li>
+          <li><strong>Studio is now a workspace.</strong> The photo you're turning into an avatar on the left, your
+            whole library beside it on the right.</li>
+          <li><strong>Fourteen accent colours</strong> instead of four, or mix your own.</li>
+          <li><strong>Small wooden clicks</strong> on the things that matter &mdash; putting an avatar on the menu bar,
+            flipping a switch. Turn them off in Settings.</li>
+          <li><strong>Hand-tuned eyes</strong> on every built-in character, and you can still nudge any of them
+            yourself.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CLOSING ===== -->
+    <section class="sect" aria-labelledby="close-heading">
+      <div class="container">
+        <div class="close rise">
+          <h2 id="close-heading">Give your menu bar a little personality</h2>
+          <p>Free, 23 MB, macOS 14 and later. English, German, Polish, Russian, Spanish and Ukrainian.</p>
+          <a class="btn track-store" href="https://apps.apple.com/us/app/vibe-eyes-menu-bar-pet/id6758390080?mt=12"
+            target="_blank" rel="noopener" data-app="Vibe Eyes">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" />
+            </svg>
+            Get it on the Mac App Store
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p>&copy; 2026 Vibe Apps</p>
+        <nav aria-label="Vibe Eyes links">
+          <a href="index.html">All apps</a>
+          <a href="vibe-eyes-privacy.html">Privacy</a>
+          <a href="mailto:vibeapps.contact@gmail.com">Support</a>
+          <button class="linkbtn" id="cookie-settings" type="button">Cookie settings</button>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
