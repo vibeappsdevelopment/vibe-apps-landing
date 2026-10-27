@@ -33,7 +33,7 @@
     <main class="privacy-content">
         <div class="container container--narrow">
             <h1>Privacy Policy for Vibe Eyes</h1>
-            <p class="privacy-updated">Last Updated: July 15, 2026</p>
+            <p class="privacy-updated">Last Updated: October 26, 2026</p>
 
             <!-- Overview -->
             <section>
@@ -106,8 +106,33 @@
                 </ul>
                 <p>
                     We are not a party to that exchange, receive none of the data, and cannot control the provider's
-                    retention or use of your photo. Choose a provider you trust and review its policy before use. If you
-                    never use the Generate feature, <strong>no image or key ever leaves your Mac.</strong>
+                    retention or use of your photo. Choose a provider you trust and review its policy before use.
+                </p>
+                <h3>Making avatars with a coding agent (Codex)</h3>
+                <p>
+                    Instead of an API key, you can let a coding agent you already use &mdash; such as <strong>OpenAI
+                    Codex</strong> &mdash; draw the pictures. This connection is <strong>off by default</strong>; you turn
+                    it on in Studio and connect the agent yourself &mdash; or let the App add one entry for
+                    Vibe Eyes to Codex's own settings file (<code>~/.codex/config.toml</code>) and change nothing
+                    else there.
+                </p>
+                <ul>
+                    <li>When it is on, the App listens on <strong><code>127.0.0.1</code> (your own Mac) only</strong>.
+                        Every request must carry a secret token that the App generates and shows only to you, and
+                        requests from web pages are refused. No other computer can connect to it.</li>
+                    <li>The App hands the agent <strong>the photo you asked it to use</strong>, its built-in instructions
+                        and reference images, and receives the agent's pictures back as files on your Mac.</li>
+                    <li><strong>The agent sends that material to its own service</strong> (for Codex, OpenAI) under
+                        <strong>your</strong> account with that service, governed by its
+                        <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">privacy
+                        policy</a>. We are not a party to that and receive nothing.</li>
+                    <li>To read photos and the agent's pictures, the App asks you <strong>once</strong>, through the
+                        standard macOS Open panel, for access to your Home folder. It reads only the files the agent
+                        names.</li>
+                </ul>
+                <p>
+                    If you never use the Generate feature or the Codex connection, <strong>no image or key ever leaves
+                    your Mac.</strong>
                 </p>
             </section>
 
