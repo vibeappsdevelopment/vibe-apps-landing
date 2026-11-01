@@ -169,6 +169,36 @@
   })();
 
   /* ------------------------------------------------------------------
+     Motya page: tick a line, the count and what is left follow
+     ------------------------------------------------------------------ */
+  (function shoppingList() {
+    var host = document.getElementById('mlist');
+    if (!host) return;
+    var rows = host.querySelectorAll('.mlist__row');
+    var count = document.getElementById('mlist-count');
+    var left = document.getElementById('mlist-left');
+    var money = new Intl.NumberFormat(document.documentElement.lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    function update() {
+      var bought = 0, rest = 0;
+      rows.forEach(function (row) {
+        if (row.getAttribute('aria-pressed') === 'true') bought++;
+        else rest += parseFloat(row.dataset.price);
+      });
+      count.textContent = bought;
+      left.textContent = left.dataset.template.replace('%s', money.format(rest));
+    }
+
+    rows.forEach(function (row) {
+      row.addEventListener('click', function () {
+        row.setAttribute('aria-pressed', row.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+        update();
+      });
+    });
+    update();
+  })();
+
+  /* ------------------------------------------------------------------
      Entrance: one orchestrated reveal, once
      ------------------------------------------------------------------ */
   (function reveal() {

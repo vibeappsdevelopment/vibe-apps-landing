@@ -1446,3 +1446,159 @@ a {
   .app-hero__grid { grid-template-columns: 1.05fr 0.95fr; }
   .features { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ========================================
+   Motya page
+   ======================================== */
+
+/* Portrait store slides: four across on a wide screen, two on a phone */
+.shots--phone { grid-template-columns: repeat(2, 1fr); }
+.shots--phone .shot img { border-radius: 16px; }
+
+@media (min-width: 960px) {
+  .shots--phone { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* The live demo: a short list you can tick, the way the app does it */
+.mlist {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: linear-gradient(150deg, #f4f9e3, #ffffff 60%);
+  box-shadow: var(--shadow-2);
+}
+
+.mlist__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mlist__count {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mlist__count span { color: #a89a96; font-weight: 600; }
+
+.mlist__left {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  text-align: right;
+}
+
+.mlist__items {
+  list-style: none;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.mlist__items li + li { border-top: 1px solid var(--line); }
+
+.mlist__row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 1rem;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.mlist__box {
+  position: relative;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid #d9d6ce;
+  border-radius: 50%;
+  background: var(--surface);
+  transition: transform var(--t-fast) var(--ease-spring);
+}
+
+.mlist__row[aria-pressed="true"] .mlist__box {
+  border-color: #c3e043;
+  background: #d4f25c;
+}
+
+.mlist__row[aria-pressed="true"] .mlist__box::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid #1c1a19;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.mlist__row:active .mlist__box { transform: scale(0.9); }
+
+.mlist__name { flex: 1; }
+
+.mlist__row[aria-pressed="true"] .mlist__name {
+  color: #a89a96;
+  text-decoration: line-through;
+}
+
+.mlist__price {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--ink-2);
+}
+
+/* Support: questions people actually ask */
+.faq {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 72ch;
+}
+
+.faq details {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq details p {
+  margin-top: 0.6rem;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+.langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* The Motya card on the home page: three lines of the list, not interactive */
+.mlist__items--mini {
+  width: min(78%, 240px);
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-1);
+}
+
+.mlist__items--mini .mlist__row { min-height: 40px; cursor: default; }
+.mlist__items--mini .mlist__box { width: 20px; height: 20px; }
+.mlist__items--mini .mlist__row[aria-pressed="true"] .mlist__box::after { left: 5px; top: 2px; width: 5px; height: 10px; }

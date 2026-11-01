@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motya &mdash; a shopping list in store order</title>
+  <meta name="description"
+    content="Motya is a shopping list for iPhone that sorts itself in store order, shows what the trip will cost, and lets you tick things off from the Home Screen. Free, no account.">
+
+  <meta name="theme-color" content="#f7f4fb">
+  <link rel="alternate" hreflang="en" href="motya.html">
+  <link rel="alternate" hreflang="ru" href="motya-ru.html">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Motya — a shopping list in store order">
+  <meta property="og:description" content="Sorted the way you walk the store. Tick things off from the Home Screen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vibeappsdevelopment.github.io/vibe-apps-landing/motya.html">
+  <meta property="og:image" content="https://vibeappsdevelopment.github.io/vibe-apps-landing/assets/motya/en-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: purple dot -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237c5cbf'/></svg>">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Analytics (consent-gated) -->
+  <script src="consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <a class="wordmark" href="index.html">
+          <span class="wordmark__dot" aria-hidden="true"></span>
+          Vibe Apps
+        </a>
+        <div class="topbar__meta">
+          <a class="mono" href="motya-ru.html" hreflang="ru" lang="ru">Русский</a>
+          <a class="mono" href="index.html">&larr; All apps</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="app-hero" aria-labelledby="app-heading">
+      <div class="container">
+        <div class="app-hero__grid">
+
+          <div>
+            <div class="app-id rise">
+              <img class="app-id__icon" src="assets/motya/icon.png" width="88" height="88" alt="The Motya app icon: an owl in sunglasses and a pink scarf.">
+              <div>
+                <p class="eyebrow" style="margin-bottom:.25rem">iPhone &middot; Shopping list</p>
+                <p class="app-id__meta">Version 1.0 &middot; Free</p>
+              </div>
+            </div>
+
+            <h1 id="app-heading" class="app-hero__title rise" style="--delay:70ms">
+              A shopping list that <em>adds itself up.</em>
+            </h1>
+            <p class="app-hero__sub rise" style="--delay:140ms">
+              Motya lays your list out the way you walk the store, shows what it will cost before you leave, and lets you tick things off right from the Home Screen.
+            </p>
+
+            <div class="actions rise" style="--delay:210ms">
+              <a class="btn track-store" href="https://apps.apple.com/app/id6805227009" target="_blank" rel="noopener" data-app="Motya">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" /></svg>
+                Download on the App Store
+              </a>
+              <a class="btn btn--ghost" href="#support">Support</a>
+            </div>
+
+            <div class="specs rise" style="--delay:280ms">
+              <span class="chip"><b>Free</b> &middot; no ads</span>
+              <span class="chip">iOS <b>26+</b></span>
+              <span class="chip"><b>6</b> languages</span>
+              <span class="chip">No account, no network</span>
+            </div>
+          </div>
+
+          <!-- The app's whole job, running on the page. -->
+          <div class="mlist rise" id="mlist" style="--delay:420ms">
+            <div class="mlist__head">
+              <p class="mlist__count" aria-live="polite"><span class="sr-only">In the cart: </span><b id="mlist-count">1</b><span> of 5</span></p>
+              <p class="mlist__left" id="mlist-left" data-template="%s Br left"></p>
+            </div>
+            <ul class="mlist__items">
+                <li><button class="mlist__row" type="button" aria-pressed="true" data-price="2.74"><span class="mlist__box" aria-hidden="true"></span><span class="mlist__name">Milk</span><span class="mlist__price">2.74</span></button></li>
+                <li><button class="mlist__row" type="button" aria-pressed="false" data-price="1.89"><span class="mlist__box" aria-hidden="true"></span><span class="mlist__name">Rye bread</span><span class="mlist__price">1.89</span></button></li>
+                <li><button class="mlist__row" type="button" aria-pressed="false" data-price="3.57"><span class="mlist__box" aria-hidden="true"></span><span class="mlist__name">Eggs, 10</span><span class="mlist__price">3.57</span></button></li>
+                <li><button class="mlist__row" type="button" aria-pressed="false" data-price="6.88"><span class="mlist__box" aria-hidden="true"></span><span class="mlist__name">Tomatoes, 1 kg</span><span class="mlist__price">6.88</span></button></li>
+                <li><button class="mlist__row" type="button" aria-pressed="false" data-price="8.05"><span class="mlist__box" aria-hidden="true"></span><span class="mlist__name">Hard cheese</span><span class="mlist__price">8.05</span></button></li>
+            </ul>
+            <p class="demo__note">Live &mdash; tick a line, the way you do in the store.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="sect" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="features-heading" class="sect__title">What it does</h2>
+        </div>
+
+        <ul class="features">
+
+          <li class="rise" style="--delay:0ms">
+            <article class="feature">
+              <span class="feature__num">01</span>
+              <h3 class="feature__name">In store order</h3>
+              <p>Products are grouped by department, in the order you walk the aisles, so you go through the store once and don't double back.</p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:60ms">
+            <article class="feature">
+              <span class="feature__num">02</span>
+              <h3 class="feature__name">Type it your way</h3>
+              <p>&ldquo;eggs 10&rdquo;, &ldquo;2 kg potatoes&rdquo;, &ldquo;milk x2&rdquo; &mdash; Motya gets the amount. Not in the catalog? Press Return and it's on the list anyway.</p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:120ms">
+            <article class="feature">
+              <span class="feature__num">03</span>
+              <h3 class="feature__name">Prices</h3>
+              <p>In Belarus with the app in Russian, about 650 products come with typical store prices. Anywhere else, 181 everyday products in your language: type the shelf price once and Motya remembers it.</p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:180ms">
+            <article class="feature">
+              <span class="feature__num">04</span>
+              <h3 class="feature__name">Widget</h3>
+              <p>Your list on the Home Screen. Tick items off without opening the app; they're ticked in the app too.</p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:240ms">
+            <article class="feature">
+              <span class="feature__num">05</span>
+              <h3 class="feature__name">Lists for everything</h3>
+              <p>Groceries, the cottage, the cat, a wish list. Finish a list and carry over what you didn't buy, or repeat an old one in one tap.</p>
+            </article>
+          </li>
+
+          <li class="rise" style="--delay:300ms">
+            <article class="feature">
+              <span class="feature__num">06</span>
+              <h3 class="feature__name">Spending</h3>
+              <p>What the month cost, by department and by week, from the prices you actually paid.</p>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SCREENSHOTS ===== -->
+    <section class="sect" aria-labelledby="shots-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="shots-heading" class="sect__title">The app</h2>
+          <p class="sect__lede">Real screens from the app.</p>
+        </div>
+
+        <ul class="shots shots--phone">
+          <li class="rise" style="--delay:0ms">
+            <figure class="shot">
+              <img src="assets/motya/en-01.jpg" width="644" height="1400" loading="lazy" decoding="async" alt="A grocery list grouped by department, with the total at the top.">
+              <figcaption>A grocery list grouped by department, with the total at the top.</figcaption>
+            </figure>
+          </li>
+          <li class="rise" style="--delay:60ms">
+            <figure class="shot">
+              <img src="assets/motya/en-03.jpg" width="644" height="1400" loading="lazy" decoding="async" alt="In the store: what is already in the cart.">
+              <figcaption>In the store: what is already in the cart.</figcaption>
+            </figure>
+          </li>
+          <li class="rise" style="--delay:120ms">
+            <figure class="shot">
+              <img src="assets/motya/en-04.jpg" width="644" height="1400" loading="lazy" decoding="async" alt="The Home Screen widget.">
+              <figcaption>The Home Screen widget.</figcaption>
+            </figure>
+          </li>
+          <li class="rise" style="--delay:180ms">
+            <figure class="shot">
+              <img src="assets/motya/en-06.jpg" width="644" height="1400" loading="lazy" decoding="async" alt="My lists: in progress, lists and a wish list.">
+              <figcaption>My lists: in progress, lists and a wish list.</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SUPPORT ===== -->
+    <section class="sect" id="support" aria-labelledby="support-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="support-heading" class="sect__title">Support</h2>
+          <p class="sect__lede">Questions, a bug, a product missing from the catalog &mdash; write to <a href="mailto:vibeapps.contact@gmail.com">vibeapps.contact@gmail.com</a>, in English or Russian.</p>
+        </div>
+        <div class="faq rise" style="--delay:60ms">
+          <details>
+            <summary>Where are my lists stored?</summary>
+            <p>Only on your iPhone. Motya has no account and no server, so nothing is sent anywhere. Deleting the app deletes the lists.</p>
+          </details>
+          <details>
+            <summary>How do I add the widget?</summary>
+            <p>Touch and hold the Home Screen, tap Edit, then Add Widget, and pick Motya. It shows the open list; a tap on a line ticks it.</p>
+          </details>
+          <details>
+            <summary>Why are there no prices?</summary>
+            <p>Store prices come with the Belarusian catalog: country Belarus, app in Russian. In other countries and languages, type the price from the shelf once &mdash; Motya keeps it for next time.</p>
+          </details>
+          <details>
+            <summary>How do I finish a list?</summary>
+            <p>Open the list and tap &middot;&middot;&middot; &rarr; Finish list, or swipe a list to the left on My lists. If something wasn't bought, Motya offers to carry it over to a new list.</p>
+          </details>
+          <details>
+            <summary>How do I start over?</summary>
+            <p>Settings &rarr; Clear history deletes finished lists, spending and learned prices. Open lists stay.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRIVACY ===== -->
+    <section class="sect" id="privacy" aria-labelledby="privacy-heading">
+      <div class="container">
+        <div class="sect__head rise">
+          <h2 id="privacy-heading" class="sect__title">Privacy</h2>
+          <p class="sect__lede">Motya collects nothing: no account, no analytics, no ads, no network. The privacy policy, in each of the app's languages:</p>
+        </div>
+        <nav class="langs rise" style="--delay:60ms" aria-label="Privacy">
+          <a class="chip" href="motya-privacy.html" hreflang="en">English</a>
+          <a class="chip" href="motya-privacy-ru.html" hreflang="ru">Русский</a>
+          <a class="chip" href="motya-privacy-uk.html" hreflang="uk">Українська</a>
+          <a class="chip" href="motya-privacy-de.html" hreflang="de">Deutsch</a>
+          <a class="chip" href="motya-privacy-pl.html" hreflang="pl">Polski</a>
+          <a class="chip" href="motya-privacy-es.html" hreflang="es">Español</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== CLOSING ===== -->
+    <section class="sect" aria-labelledby="close-heading">
+      <div class="container">
+        <div class="close rise">
+          <h2 id="close-heading">Your next trip, already sorted</h2>
+          <p>Free, for iPhone with iOS 26 and later. English, German, Polish, Russian, Spanish and Ukrainian.</p>
+          <a class="btn track-store" href="https://apps.apple.com/app/id6805227009" target="_blank" rel="noopener" data-app="Motya">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-1.082-.058-2.206.52-2.806.52l-.004.004c-.657 0-1.74-.52-2.522-.52-1.309 0-2.51.782-3.15 1.954-1.278 2.34-.413 5.86 1.05 7.953.71.99 1.51 2.053 2.527 2.053.987 0 1.345-.609 2.541-.609 1.196 0 1.51.609 2.556.609 1.045 0 1.775-1.026 2.482-2.032.784-1.11 1.09-2.189 1.11-2.24Z" /></svg>
+            Download on the App Store
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p>&copy; 2026 Vibe Apps</p>
+        <nav aria-label="Motya links">
+          <a href="index.html">All apps</a>
+          <a href="motya-privacy.html">Privacy</a>
+          <a href="#support">Support</a>
+          <button class="linkbtn" id="cookie-settings" type="button">Cookie settings</button>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
